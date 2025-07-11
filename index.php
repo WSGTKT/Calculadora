@@ -14,18 +14,26 @@
         <input type="number" name="num2" required><br><br>
 
         <input type="submit" name="sumar" value="sumar">
+        <input type="submit" name="restar" value="restar">
+        <input type="submit" name="multiplicar" value="multiplicar">
+        <input type="submit" name="dividir" value="dividir">
+
     </form>
     <?php
      if (isset($_POST['sumar'])) {
 
         $num1 = $_POST['num1'];
         $num2 = $_POST['num2'];
-
-
         $resultado = $num1 + $num2;
+        $resultado = $num1 - $num2;
+        $resultado = $num1 * $num2;
+        $resultado = $num1 / $num2;
 
+        echo "<h3>El resultado de la suma es: $resultado</h3>"; 
+        echo "<h3>El resultado de la resta es: $resultado</h3>"; 
+        echo "<h3>El resultado de la multiplicacion es: $resultado</h3>"; 
+        echo "<h3>El resultado de la divicion es: $resultado</h3>"; 
 
-        echo "<h3>El resultado de la suma es: $resultado</h3>":
      }
      ?>  
 </body>
