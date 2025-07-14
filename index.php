@@ -6,35 +6,53 @@
 </head>
 <body>
     <h2>Formulario para ingresar números</h2>
-    <form method="post">
-        <label for="num1">ingrese el primero número:</label>
-        <input type="number" name="num1" required><br><br>
+    <form method="get">
+            <label for="num1">Primer número:</label>
+            <input type="number" name="num1" required>
 
-        <label for="num2">Ingrese el sengundo número:</label>
-        <input type="number" name="num2" required><br><br>
 
-        <input type="submit" name="sumar" value="sumar">
-        <input type="submit" name="restar" value="restar">
-        <input type="submit" name="multiplicar" value="multiplicar">
-        <input type="submit" name="dividir" value="dividir">
+            <label for="num2">Segundo número:</label>
+            <input type="number" name="num2" required>
 
-    </form>
-    <?php
-     if (isset($_POST['sumar'])) {
 
-        $num1 = $_POST['num1'];
-        $num2 = $_POST['num2'];
-        $resultado = $num1 + $num2;
-        $resultado = $num1 - $num2;
-        $resultado = $num1 * $num2;
-        $resultado = $num1 / $num2;
+            <input type="submit" name="sumar" value="Calcular Suma"><br>
+            <input type="submit" name="restar" value="Calcular Resta"><br>
+            <input type="submit" name="mult" value="Calcular Multiplicación"><br>
+            <input type="submit" name="div" value="Calcular División"><br>
+        </form>
 
-        echo "<h3>El resultado de la suma es: $resultado</h3>"; 
-        echo "<h3>El resultado de la resta es: $resultado</h3>"; 
-        echo "<h3>El resultado de la multiplicacion es: $resultado</h3>"; 
-        echo "<h3>El resultado de la divicion es: $resultado</h3>"; 
 
-     }
-     ?>  
+        <?php
+        if (isset($_GET['sumar'])) {
+            $num1 = $_GET['num1'];
+            $num2 = $_GET['num2'];
+
+            $resultado = $num1 + $num2;
+
+            echo "<div class='resultado'>Resultado: $resultado</div>";
+        }
+        if (isset($_GET['restar'])) {
+            $num1 = $_GET['num1'];
+            $num2 = $_GET['num2'];
+            $resultado = $num1 - $num2;
+
+            echo "<div class='resultado'>Resultado: $resultado</div>";
+        }
+        if (isset($_GET['mult'])) {
+            $num1 = $_GET['num1'];
+            $num2 = $_GET['num2'];
+            $resultado = $num1 * $num2;
+
+            echo "<div class='resultado'>Resultado: $resultado</div>";
+        }
+        if (isset($_GET['div'])) {
+            $num1 = $_GET['num1'];
+            $num2 = $_GET['num2'];
+            $resultado = $num1 / $num2;
+
+             echo "<div class='resultado'>Resultado: $resultado</div>";
+        }
+        ?>
+    </div>
 </body>
 </html>
